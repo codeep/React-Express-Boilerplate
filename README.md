@@ -1,5 +1,5 @@
-# BOT MANAGER
-Bot Manager for add, remove, edit and delete bot.
+# REACT EXPRESS Boilerplate
+A React Express Mongo Boilerplate to get started to development.
 ### Prerequisites
  node version >= 7 and an npm version >= 4.
 ## Install
