@@ -5,11 +5,11 @@ A React Express Mongo Boilerplate to get started to development.
 ## Install
 First, clone the repo via git:
 ```bash
-git clone https://github.com/vlad-grigoryan/bot-manager.git
+git clone https://github.com/codeep/React-Express-Boilerplate.git
 ```
 And then install dependencies with npm.
 ```bash
-$ cd bot-manager
+$ cd React-Express-Boilerplate
 $ npm install
 ```
 ## Run
