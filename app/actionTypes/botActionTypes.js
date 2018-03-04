@@ -1,0 +1,10 @@
+export const CREATE_BOT = 'CREATE_BOT';
+export const GET_BOTS = 'GET_BOTS';
+export const GET_BOTS_RESPONSE = 'GET_BOTS_RESPONSE';
+export const GET_BOT_BY_ID = 'GET_BOT_BY_ID';
+export const GET_BOT_BY_ID_RESPONSE = 'GET_BOT_BY_ID_RESPONSE';
+export const EDIT_BOT = 'EDIT_BOT';
+export const DELETE_BOT = 'DELETE_BOT';
+export const CHANGE_BOT_NAME = 'CHANGE_BOT_NAME';
+export const CHANGE_BOT_DESCRIPTION =  "CHANGE_BOT_DESCRIPTION";
+export const CLEAR_BOT_DATA = "CLEAR_BOT_DATA";
