@@ -15,7 +15,7 @@ app.use('/', require('./routes/bot.router'));
 mongoose.Promise = require('bluebird');
 mongoose.connect(`mongodb://${config.dbHost}:${config.dbPort}/${config.dbName}`, function (err) {
     if (err) {
-        console.log(err, "error");
+        console.log(err, "Please check if you have Mongo installed.");
         return;
     }
     console.log('Api Server Started');
