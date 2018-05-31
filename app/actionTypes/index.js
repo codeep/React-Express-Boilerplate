@@ -1,4 +1,4 @@
-import * as BotActionTypes from './botActionTypes';
+import * as TodoActionTypes from './todoActionTypes';
 import * as IndexActionTypes from './indexActionTypes';
 
-export { BotActionTypes, IndexActionTypes }
+export { TodoActionTypes, IndexActionTypes }

@@ -7,14 +7,14 @@ module.exports = {
     dbPort:"27017",
     dbName: "bot-manager",
     app:{
-        title:"Bot Manager",
-        description:'Bot Manager for add, remove, edit and delete bot.',
+        title:"Todo Manager",
+        description:'Todo Manager for add, remove, edit and delete bot.',
         head:{
-            titleTemplate:'Bot Manager',
+            titleTemplate:'Todo Manager',
             meta:[
                 {
                     name:"description",
-                    content:"Bot Manager for add, remove, edit and delete bot."
+                    content:"Todo Manager for add, remove, edit and delete bot."
                 },
                 {charset:"utf-8"}
             ]

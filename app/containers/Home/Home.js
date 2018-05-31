@@ -1,27 +1,23 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { AddButton } from '../../components/AddButton';
-import { BotList } from '../BotList';
+import { TodoList } from '../TodoList';
 
 class Home extends Component {
-    constructor(props) {
-        super(props);
-        this.addBot = this.addBot.bind(this);
-    }
 
-    addBot() {
-        const { history } = this.props;
-        history.push('/create-bot')
-    }
+  addTodo = () => {
+    const { history } = this.props;
+    history.push('/create-todo')
+  }
 
-    render() {
-        return (
-            <div>
-                <BotList />
-                <AddButton addButtonHandler={this.addBot} />
-            </div>
-        )
-    }
+  render() {
+    return (
+      <div>
+        <TodoList />
+        <AddButton addButtonHandler={this.addTodo} />
+      </div>
+    )
+  }
 }
 
 export default withRouter(Home);

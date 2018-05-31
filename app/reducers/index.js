@@ -1,4 +1,4 @@
-import { botReducer as bot } from './botReducer'
+import { todoReducer as todo } from './todoReducer'
 import {combineReducers} from 'redux';
 import { IndexActionTypes } from '../actionTypes';
 
@@ -30,4 +30,4 @@ export function reducer(state = initialState, action) {
     }
 }
 
-export default combineReducers({bot})
+export default combineReducers({todo})

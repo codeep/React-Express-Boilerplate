@@ -8,7 +8,7 @@ const app = new Express();
 const port = config.port;
 
 app.use('/api',(req,res)=>{
-    proxy.web(req,res,{target:`${targetUrl}`})
+    proxy.web(req, res, {target:`${targetUrl}`})
 });
 
 
@@ -45,9 +45,9 @@ if(process.env.NODE_EVN !== 'production') {
 }
 
 app.listen(port,(err)=>{
-    if(err){
-        console.error(err)
-    }else{
-        console.log(`===>open http://${config.host}:${config.port} in a browser to view the app`);
+    if(err) {
+      console.error(err)
+    } else {
+      console.log(`===>open http://${config.host}:${config.port} in a browser to view the app`);
     }
 });

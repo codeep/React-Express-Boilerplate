@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withRouter } from 'react-router-dom';
-import * as botActions from '../../actions/botActions';
-import { BotForm } from '../../components/BotForm';
+import * as todoActions from '../../actions/todoActions';
+import { TodoForm } from '../../components/TodoForm';
 
-class BotManage extends Component {
+class TodoManage extends Component {
     constructor(props) {
         super(props);
-        this.addBot = this.addBot.bind(this);
+        this.addTodo = this.addTodo.bind(this);
         this.changeName = this.changeName.bind(this);
         this.changeDescription = this.changeDescription.bind(this);
     }
@@ -17,39 +17,39 @@ class BotManage extends Component {
         const {match, actions} = this.props;
         const {id} = match.params;
         if (id) {
-            actions.get_bot_by_id(id);
+            actions.get_todo_by_id(id);
         } else {
-            actions.clear_bot_data();
+            actions.clear_todo_data();
         }
     }
 
     changeName(event) {
         const { actions } = this.props;
-        actions.change_bot_name(event.target.value);
+        actions.change_todo_name(event.target.value);
     }
 
     changeDescription(event) {
         const { actions } = this.props;
-        actions.change_bot_description(event.target.value);
+        actions.change_todo_description(event.target.value);
     }
 
-    addBot(event) {
-        const {actions, history, bot} = this.props;
-        const {name, description, id} = bot;
+    addTodo(event) {
+        const {actions, history, todo} = this.props;
+        const {name, description, id} = todo;
 
         event.preventDefault();
-        bot.id
-        ? actions.edit_bot(name, description, id)
-        : actions.create_bot(name, description, id);
+        todo.id
+        ? actions.edit_todo(name, description, id)
+        : actions.create_todo(name, description, id);
         history.push('/');
     }
 
     render() {
-        const {bot} = this.props;
+        const {todo} = this.props;
         return (
-            <BotForm
-                bot={bot}
-                onFormSubmit={this.addBot}
+            <TodoForm
+                todo={todo}
+                onFormSubmit={this.addTodo}
                 onNameChange={this.changeName}
                 onDescriptionChange={this.changeDescription}
             />
@@ -59,17 +59,17 @@ class BotManage extends Component {
 
 function mapStateToProps(state) {
     return {
-        bot: state.bot
+        todo: state.todo
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators(botActions, dispatch)
+        actions: bindActionCreators(todoActions, dispatch)
     }
 }
 
 export default withRouter(connect(
     mapStateToProps,
     mapDispatchToProps
-)(BotManage));
+)(TodoManage));

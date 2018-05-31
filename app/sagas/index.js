@@ -1,11 +1,11 @@
 import {fork} from 'redux-saga/effects'
-import {newBotFlow, getBotListFlow, editBotFlow, getBotFlow, deleteBotFlow} from './newBotSaga'
+import {newTodoFlow, getTodoListFlow, editTodoFlow, getTodoFlow, deleteTodoFlow} from './newTodoSaga'
 
 export default function* rootSaga() {
-    yield fork(newBotFlow);
-    yield fork(getBotListFlow);
-    yield fork(getBotFlow);
-    yield fork(editBotFlow);
-    yield fork(deleteBotFlow);
+    yield fork(newTodoFlow);
+    yield fork(getTodoListFlow);
+    yield fork(getTodoFlow);
+    yield fork(editTodoFlow);
+    yield fork(deleteTodoFlow);
 
 }

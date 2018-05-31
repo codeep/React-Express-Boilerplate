@@ -3,32 +3,32 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { TableRow, TableRowColumn } from 'material-ui/Table';
 import style from './style.css';
 
-class BotListBody extends PureComponent {
+class TodoListBody extends PureComponent {
     constructor(props) {
         super(props);
     }
 
     render() {
-        const { botList, removeButtonHandler, editButtonHandler } = this.props;
-
+        const { todoList, removeButtonHandler, editButtonHandler } = this.props;
+        console.log(todoList)
         return (
-            botList.map((bot, i) => {
+            todoList.map((todo, i) => {
                 return (
-                    <TableRow key={bot._id}>
-                        <TableRowColumn>{bot.name}</TableRowColumn>
-                        <TableRowColumn>{bot.description}</TableRowColumn>
+                    <TableRow key={todo._id}>
+                        <TableRowColumn>{todo.name}</TableRowColumn>
+                        <TableRowColumn>{todo.description}</TableRowColumn>
                         <TableRowColumn>
                             <RaisedButton
                                 label="Edit"
                                 primary={true}
                                 type='submit'
-                                onClick={() => editButtonHandler(bot._id)}
+                                onClick={() => editButtonHandler(todo._id)}
                             /> &nbsp;
                             <RaisedButton
                                 label="Delete"
                                 secondary={true}
                                 type='submit'
-                                onClick={() => removeButtonHandler(bot._id)}
+                                onClick={() => removeButtonHandler(todo._id)}
                             />
                         </TableRowColumn>
                     </TableRow>
@@ -39,4 +39,4 @@ class BotListBody extends PureComponent {
     }
 }
 
-export default BotListBody;
+export default TodoListBody;

@@ -2,7 +2,7 @@ import React, {PureComponent} from 'react';
 import {TableHeaderColumn, TableRow} from 'material-ui/Table';
 import style from './style.css';
 
-class BotListHeader extends PureComponent {
+class TodoListHeader extends PureComponent {
     constructor(props) {
         super(props);
     }
@@ -19,4 +19,4 @@ class BotListHeader extends PureComponent {
     }
 }
 
-export default BotListHeader;
+export default TodoListHeader;

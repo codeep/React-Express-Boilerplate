@@ -35,7 +35,7 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {
-                    presets: ['react', 'es2015', 'stage-3']
+                    presets: ['react', 'env', 'stage-0']
                 }
             },
             {test: /\.eot(\?v=\d+.\d+.\d+)?$/, loader: 'file-loader'},
@@ -58,7 +58,7 @@ module.exports = {
             "progress.env.NODE_ENV": JSON.stringify('development')
         }),
         new HtmlWebpackPlugin({
-            title: "Bot Manager",
+            title: "Todo Manager",
             showErrors: true,
         }),
         new ExtractTextPlugin({
