@@ -1,10 +1,11 @@
 import * as actionTypes from '../actionTypes/todoActionTypes';
 
-export const create_todo = (name = '', description = '') => {
+export const create_todo = (name = '', description = '', deadline) => {
     return {
         type: actionTypes.CREATE_TODO,
-        name: name,
-        description: description
+        name,
+        description,
+        deadline
     }
 };
 
@@ -21,11 +22,12 @@ export const get_todo_by_id = (id) => {
     }
 };
 
-export const edit_todo = (name, description, id) => {
+export const edit_todo = (name, description, deadline, id) => {
     return {
         type: actionTypes.EDIT_TODO,
         name,
         description,
+        deadline,
         id
     }
 };
@@ -48,6 +50,13 @@ export const change_todo_description = (description) => {
     return {
         type: actionTypes.CHANGE_TODO_DESCRIPTION,
         description
+    }
+};
+
+export const change_todo_deadline = (deadline) => {
+    return {
+        type: actionTypes.CHANGE_TODO_DEADLINE,
+        deadline
     }
 };
 

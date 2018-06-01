@@ -46,10 +46,10 @@ export function* getTodoFlow () {
     }
 }
 
-export function* editTodo (id, name, description) {
+export function* editTodo (id, name, description, deadline) {
     yield put({type: IndexActionTypes.FETCH_START});
     try {
-        return yield call(update, `/todo`, {id, name, description});
+        return yield call(update, `/todo`, {id, name, description, deadline});
     } catch (err) {
         yield put({type: IndexActionTypes.SET_MESSAGE, msgContent: "Can't Get Todo List", msgType: 0});
     } finally {
@@ -60,7 +60,7 @@ export function* editTodo (id, name, description) {
 export function* editTodoFlow () {
     while (true){
         let req = yield take(TodoActionTypes.EDIT_TODO);
-        let res = yield call(editTodo, req.id, req.name, req.description);
+        let res = yield call(editTodo, req.id, req.name, req.description, req.deadline);
         if(res){
             yield put({type:TodoActionTypes.GET_TODOS_RESPONSE,data:res})
         }

@@ -11,6 +11,7 @@ class TodoManage extends Component {
         this.addTodo = this.addTodo.bind(this);
         this.changeName = this.changeName.bind(this);
         this.changeDescription = this.changeDescription.bind(this);
+        this.changeDeadline = this.changeDeadline.bind(this);
     }
 
     componentDidMount() {
@@ -33,25 +34,32 @@ class TodoManage extends Component {
         actions.change_todo_description(event.target.value);
     }
 
+    changeDeadline(time) {
+        const { actions } = this.props;
+        actions.change_todo_deadline(time);
+    }
+
     addTodo(event) {
         const {actions, history, todo} = this.props;
-        const {name, description, id} = todo;
+        const {name, description, deadline, id} = todo;
 
         event.preventDefault();
         todo.id
-        ? actions.edit_todo(name, description, id)
-        : actions.create_todo(name, description, id);
+        ? actions.edit_todo(name, description, deadline, id)
+        : actions.create_todo(name, description, deadline, id);
         history.push('/');
     }
 
     render() {
         const {todo} = this.props;
+
         return (
             <TodoForm
                 todo={todo}
                 onFormSubmit={this.addTodo}
                 onNameChange={this.changeName}
                 onDescriptionChange={this.changeDescription}
+                onDeadlineChange={this.changeDeadline}
             />
         )
     }

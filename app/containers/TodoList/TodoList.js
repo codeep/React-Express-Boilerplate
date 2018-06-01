@@ -41,7 +41,6 @@ class TodoList extends Component {
       const { todoList } = this.props;
       const { header } = this.state;
 
-      console.log(this.props, "todo list")
       return (
         <Table selectable={false}>
           <TableHeader>

@@ -15,13 +15,14 @@ export const getOne = (req, res) => {
 export const createTodo = (req, res) => {
     Todo.create({
         name: req.body.name,
-        description: req.body.description
+        description: req.body.description,
+        deadline: req.body.deadline
     }).then(todo => res.send(todo))
     .catch(err => res.end(err));
 };
 
 export const updateTodo = (req, res) => {
-    Todo.update({ _id: req.body.id }, { name: req.body.name, description: req.body.description })
+    Todo.update({ _id: req.body.id }, { name: req.body.name, description: req.body.description, deadline: req.body.deadline })
         .then(updated => res.end())
         .catch(err => res.end(err));
 };

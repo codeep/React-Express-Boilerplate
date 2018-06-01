@@ -1,6 +1,6 @@
 import axios from 'axios'
 import appConfig from '../config';
-console.log(appConfig, 'appConfig')
+
 const requestUrl = `${appConfig.apiHost}`;
 const requestPort = `${appConfig.apiPort}`;
 
@@ -32,7 +32,6 @@ axios.interceptors.response.use((res) => {
 });
 
 export const get = (url) => {
-    console.log(url, 'url')
     return axios.get(url, config)
 };
 
@@ -41,7 +40,6 @@ export const post = (url, data) => {
 };
 
 export const update = (url, data) => {
-    console.log(requestUrl, 'requestUrl')
     return axios.put(url, data, config)
 };
 export const remove = (url, data) => {
