@@ -1,7 +1,7 @@
-import Express from 'express'
-import config from '../../config'
-import bodyParser from 'body-parser'
-import mongoose from 'mongoose'
+import Express from 'express';
+import config from '../../config';
+import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
 
 
 const port = config.apiPort;
@@ -15,7 +15,7 @@ app.use('/', require('./routes/todo.router'));
 mongoose.Promise = require('bluebird');
 mongoose.connect(`mongodb://${config.dbHost}:${config.dbPort}/${config.dbName}`, function (err) {
     if (err) {
-        console.log(err, "Please check if you have Mongo installed.");
+        console.log("Please check if you have Mongo installed. The following error occurred: ", err);
         return;
     }
     console.log('Api Server Started');

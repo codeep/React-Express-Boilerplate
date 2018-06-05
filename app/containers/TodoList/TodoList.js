@@ -14,6 +14,7 @@ class TodoList extends Component {
             header: {
               name: 'Name',
               description: 'Description',
+              deadline: 'Deadline',
               actions: 'Actions'
             }
         };

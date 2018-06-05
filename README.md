@@ -2,22 +2,26 @@
 
 This is a sophisticated boilerplate that uses React on front-end and Node.js (Express) on back-end.
 
-It implements useful tools, such as redux, sagas, mongoose, material-ui, to make the project as professional as possible.
+This boilerplate is empowered by the following technologies:
+• Redux
+• Redux-saga
+• Mongoose
+• Material-UI
 
-It's already a usable CRUD app, using todos to illustrate that.
+It's a usable CRUD (Create, Read, Update, Delete) app, using todo-s to illustrate that.
 
 Follow the steps below to get started using this boilerplate for your project!
 
 ### Prerequisites
 • Node - version >= 7  
-• npm version >= 4
-• Mongo DB
+• npm - version >= 4
+• MongoDB - any version
 
 ## Install
 
 First, clone the repository via git:
 ```bash
-git clone https://github.com/codeep/React-Express-Boilerplate.git
+$ git clone https://github.com/codeep/React-Express-Boilerplate.git
 ```
 Then, install dependencies using npm.
 ```bash
@@ -30,3 +34,4 @@ Start the app:
 ```bash
 $ npm start
 ```
+This command will start the React application and API simultaneously.

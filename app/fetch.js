@@ -7,13 +7,13 @@ const requestPort = `${appConfig.apiPort}`;
 let config = {
     baseURL: 'http://127.0.0.1:3001/api',
     transformRequest: [
-        (data) => {
-            let ret = '';
-            for (let it in data) {
-                ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
-            }
-            return ret
+      (data) => {
+        let ret = '';
+        for (let it in data) {
+            ret += encodeURIComponent(it) + '=' + encodeURIComponent(data[it]) + '&'
         }
+        return ret;
+      }
     ],
     transformResponse: [
         (data) => {

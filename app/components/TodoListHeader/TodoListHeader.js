@@ -13,6 +13,7 @@ class TodoListHeader extends PureComponent {
             <TableRow>
                 <TableHeaderColumn>{headerData.name}</TableHeaderColumn>
                 <TableHeaderColumn>{headerData.description}</TableHeaderColumn>
+                <TableHeaderColumn>{headerData.deadline}</TableHeaderColumn>
                 <TableHeaderColumn>{headerData.actions}</TableHeaderColumn>
             </TableRow>
         )
