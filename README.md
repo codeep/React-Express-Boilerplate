@@ -3,10 +3,11 @@
 This is a sophisticated boilerplate that uses React on front-end and Node.js (Express) on back-end.
 
 This boilerplate is empowered by the following technologies:
-• Redux
-• Redux-saga
-• Mongoose
-• Material-UI
+• Redux  
+• Redux-saga  
+• Mongoose  
+• Material-UI  
+• Moment  
 
 It's a usable CRUD (Create, Read, Update, Delete) app, using todo-s to illustrate that.
 
