@@ -14,7 +14,7 @@ Follow the steps below to get started using this boilerplate for your project!
 
 ### Prerequisites
 • Node - version >= 7  
-• npm - version >= 4
+• npm - version >= 4  
 • MongoDB - any version
 
 ## Install
