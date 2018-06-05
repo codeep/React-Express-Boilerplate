@@ -35,3 +35,5 @@ Start the app:
 $ npm start
 ```
 This command will start the React application and API simultaneously.
+
+Try to add, edit, and delete todos and enjoy all the functionalities provided.
