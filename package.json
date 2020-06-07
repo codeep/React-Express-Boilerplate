@@ -57,7 +57,7 @@
     "webpack-hot-middleware": "^2.21.0"
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.18.1",
     "body-parser": "^1.18.2",
     "connect-history-api-fallback": "^1.5.0",
     "cookie-parser": "^1.4.3",
