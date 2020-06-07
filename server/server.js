@@ -4,7 +4,24 @@ import httpProxy from 'http-proxy';
 import connectHistoryApiFallback from 'connect-history-api-fallback';
 import config from '../config';
 
-const app = new Express();
+const WebpackDevServer = require('webpack-dev-server');
+let app;
+if(process.env.NODE_EVN !== 'production') {
+    const Webpack = require('webpack');
+    const webpackConfig = require('../webpack.dev');
+
+    const compiler = Webpack(webpackConfig);
+    const devServerOptions = Object.assign({}, webpackConfig.devServer, {
+        open: true,
+        stats: {
+            colors: true,
+        },
+    });
+    app = new WebpackDevServer(compiler, devServerOptions);
+} else {
+    app = new WebpackDevServer();
+}
+
 const port = config.port;
 
 app.use('/api',(req,res) => {
@@ -22,27 +39,6 @@ const proxy = httpProxy.createProxyServer({
     target:targetUrl
 });
 
-
-
-if(process.env.NODE_EVN !== 'production') {
-    const Webpack = require('webpack');
-    const WebpackDevMiddleware = require('webpack-dev-middleware');
-    const WebpackHotMiddleware = require('webpack-hot-middleware');
-    const webpackConfig = require('../webpack.dev');
-
-    const compiler = Webpack(webpackConfig);
-
-    app.use(WebpackDevMiddleware(compiler, {
-        publicPath: '/',
-        stats: {colors: true},
-        lazy: false,
-        watchOptions: {
-            aggregateTimeout: 300,
-            poll: true
-        },
-    }));
-    app.use(WebpackHotMiddleware(compiler));
-}
 
 app.listen(port, (err) => {
     if(err) {

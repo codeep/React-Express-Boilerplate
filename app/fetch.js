@@ -5,7 +5,7 @@ const requestUrl = `${appConfig.apiHost}`;
 const requestPort = `${appConfig.apiPort}`;
 
 let config = {
-    baseURL: 'http://127.0.0.1:3001/api',
+    baseURL: 'http://localhost:3001/api',
     transformRequest: [
       (data) => {
         let ret = '';
