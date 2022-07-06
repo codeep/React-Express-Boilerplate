@@ -63,7 +63,7 @@
     "http-proxy": "^1.18.1",
     "install": "^0.10.4",
     "material-ui": "^0.20.0",
-    "moment": "2.22.2",
+    "moment": "2.29.4",
     "mongoose": "^5.7.5",
     "react": "^16.2.0",
     "react-dom": "^16.13.1",
